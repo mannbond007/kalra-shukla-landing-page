@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="relative w-full aspect-square md:aspect-auto md:h-full max-h-[550px] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               {/* Background Image */}
               <Image
-                src="/hero.webp" // put your image in public folder
+                src="/image.jpg.jpeg" // put your image in public folder
                 alt="Students studying in coaching class"
                 fill
                 className="object-cover"

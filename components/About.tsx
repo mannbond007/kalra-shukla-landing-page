@@ -26,7 +26,7 @@ export default function About() {
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
               {/* Image */}
               <Image
-                src="/about.webp"
+                src="/about_01.png"
                 alt="Coaching"
                 fill
                 className="object-cover"
@@ -44,46 +44,48 @@ export default function About() {
             </div>
 
             {/* Floating Card */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.3, duration: 0.6 }}
-  className="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-4 bg-white/95 backdrop-blur-md px-3 py-3 rounded-xl shadow-md w-56 border border-gray-100"
->
-  {/* Top Row */}
-  <div className="flex items-center justify-between mb-2">
-    <div className="flex -space-x-2">
-      {["/s1.png", "/s2.png", "/s3.png", "/s4.png"].map((src, i) => (
-        <div
-          key={i}
-          className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white"
-        >
-          <img
-            src={src}
-            alt="Student"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
-    </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-4 bg-white/95 backdrop-blur-md px-3 py-3 rounded-xl shadow-md w-56 border border-gray-100"
+            >
+              {/* Top Row */}
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex -space-x-2">
+                  {["/s1.png", "/s2.png", "/s3.png", "/s4.png"].map(
+                    (src, i) => (
+                      <div
+                        key={i}
+                        className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src={src}
+                          alt="Student"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ),
+                  )}
+                </div>
 
-    <span className="text-[10px] font-medium text-gray-500">
-      +500
-    </span>
-  </div>
+                <span className="text-[10px] font-medium text-gray-500">
+                  +500
+                </span>
+              </div>
 
-  {/* Title */}
-  <p className="text-sm font-semibold text-[#1A1A1A] leading-tight">
-    Top Achievers
-  </p>
+              {/* Title */}
+              <p className="text-sm font-semibold text-[#1A1A1A] leading-tight">
+                Top Achievers
+              </p>
 
-  {/* Bottom Stats */}
-  <div className="mt-2 flex items-center justify-between text-[11px]">
-    <span className="font-bold text-[#ED383C]">AIR</span>
-    <span className="font-bold text-[#1A1A1A]">95%+</span>
-  </div>
-</motion.div>
+              {/* Bottom Stats */}
+              <div className="mt-2 flex items-center justify-between text-[11px]">
+                <span className="font-bold text-[#ED383C]">AIR</span>
+                <span className="font-bold text-[#1A1A1A]">95%+</span>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
