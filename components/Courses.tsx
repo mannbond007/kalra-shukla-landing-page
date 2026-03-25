@@ -1,117 +1,158 @@
 "use client";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Check, CircleCheckBig } from "lucide-react";
 
 const courses = [
   {
     title: "NEET Coaching",
-    duration: "1 to 2 Years",
+    duration: "1 - 2 Years",
     tag: "Medical",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800",
+    desc: "Master NEET with structured preparation and proven rank strategies.",
     features: [
-      "Extensive NCERT coverage",
-      "Regular mock tests & analysis",
-      "Doubt resolution sessions",
-      "Access to online question bank"
+      "Complete NCERT coverage",
+      "Weekly mock tests",
+      "Doubt sessions",
+      "Rank boosting strategy",
+      "Personal mentorship",
+      "Performance tracking",
     ],
-    highlight: true,
+    badge: "500+ Selections",
   },
   {
     title: "IIT-JEE Coaching",
-    duration: "1 to 2 Years",
+    duration: "1 - 2 Years",
     tag: "Engineering",
+    image: "https://websiteupload.s3.ap-south-1.amazonaws.com/2024/05/iit-coaching-1.jpg",
+    desc: "Advanced JEE training with deep concept clarity.",
     features: [
-      "Advanced problem-solving approach",
-      "Module-wise testing pattern",
-      "Previous years' paper analysis",
-      "Concepts masterclasses"
+      "Advanced problems",
+      "PYQ analysis",
+      "Concept mastery",
+      "Test series",
+      "Doubt solving sessions",
+      "Rank improvement plans",
     ],
-    highlight: false,
+    badge: "Top AIR Results",
   },
   {
     title: "Foundation Courses",
-    duration: "For Class 9th & 10th",
-    tag: "Olympiads & Board",
+    duration: "Class 9th & 10th",
+    tag: "Olympiads",
+    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=800",
+    desc: "Build strong academic base early.",
     features: [
-      "Strong conceptual base",
-      "NTSE & Olympiad preparation",
-      "Focus on logic & reasoning",
-      "Early start advantage"
+      "Concept clarity",
+      "NTSE prep",
+      "Logical thinking",
+      "Early advantage",
+      "Competitive mindset",
+      "Regular tests",
     ],
-    highlight: false,
-  }
+    badge: "Strong Foundation",
+  },
+  {
+    title: "School Integrated Program",
+    duration: "Class 11th & 12th",
+    tag: "Integrated",
+    image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=800",
+    desc: "School + coaching integrated for efficiency.",
+    features: [
+      "Time saving",
+      "Board + competitive sync",
+      "Daily monitoring",
+      "Better discipline",
+      "Integrated curriculum",
+      "Reduced stress",
+    ],
+    badge: "Save 3-4 Hrs Daily",
+  },
 ];
 
 export default function Courses() {
   return (
-    <section id="courses" className="py-20 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">
-            Our Flagship <span className="text-[#ED383C]">Programs</span>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our <span className="text-[#ED383C]">Programs</span>
           </h2>
-          <p className="text-lg text-gray-600">
-            Scientifically crafted curriculum for maximum syllabus retention and perfect exam temperament.
+
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+            Carefully designed programs to help students achieve top ranks in NEET & JEE
+            with structured learning, expert guidance, and consistent practice.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`relative bg-white rounded-3xl p-8 border ${
-                course.highlight 
-                  ? "border-[#ED383C] shadow-xl shadow-[#ED383C]/10" 
-                  : "border-gray-200 shadow-lg shadow-gray-100/50"
-              } flex flex-col h-full`}
-            >
-              {course.highlight && (
-                <div className="absolute top-0 right-8 -translate-y-1/2 bg-[#ED383C] text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
-                  Most Popular
-                </div>
-              )}
-              
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 bg-gray-100 text-[#1A1A1A] text-xs font-semibold rounded-full mb-4 uppercase tracking-wide">
-                  {course.tag}
-                </span>
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{course.title}</h3>
-                <p className="text-gray-500 font-medium">{course.duration}</p>
-              </div>
-
-              <div className="flex-1">
-                <ul className="space-y-4 mb-8">
-                  {course.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start gap-3 text-gray-600">
-                      <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                        course.highlight ? "text-[#ED383C]" : "text-gray-400"
-                      }`} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <a
-                href="#contact"
-                className={`w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold transition-all ${
-                  course.highlight
-                    ? "bg-[#ED383C] text-white hover:bg-[#d62d31]"
-                    : "bg-gray-50 text-[#1A1A1A] hover:bg-gray-100"
-                }`}
-              >
-                Enroll Now
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 gap-6">
+          {courses.map((course, i) => (
+            <Card key={i} course={course} />
           ))}
         </div>
 
       </div>
     </section>
+  );
+}
+
+/* 🔥 Card */
+function Card({ course }: any) {
+  return (
+    <div className="group p-4 bg-white border border-gray-200 hover:-translate-y-1 transition duration-300 rounded-lg shadow shadow-black/10 h-full flex flex-col">
+
+      {/* Image */}
+      <div className="relative overflow-hidden rounded-md">
+        <img
+          className="h-40 w-full object-cover object-center transition duration-500 group-hover:scale-105"
+          src={course.image}
+          alt={course.title}
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+
+        <span className="absolute top-2 left-2 text-[10px] bg-white/90 backdrop-blur px-2 py-1 rounded-full shadow font-semibold">
+          {course.tag}
+        </span>
+      </div>
+
+      {/* Title */}
+      <p className="text-gray-900 text-lg font-semibold mt-4">
+        {course.title}
+      </p>
+
+      <p className="text-xs text-gray-500 mt-1">
+        {course.duration}
+      </p>
+
+      {/* Badge */}
+      <p className="text-xs font-semibold text-[#ED383C] mt-2">
+        {course.badge}
+      </p>
+
+      {/* Description */}
+      <p className="text-zinc-500 text-sm leading-6 mt-2 mb-3">
+        {course.desc}
+      </p>
+
+      {/* ✅ FEATURES WITH CLEAN CHECK ICON */}
+      <ul className="space-y-2 mb-5 flex-1">
+        {course.features.slice(0, 4).map((f: string, i: number) => (
+          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+            {/* <Check className="" /> */}
+            <CircleCheckBig className="w-4 h-4 text-[#ED383C] mt-[3px] stroke-[3]" />
+            {f}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
+      <button className="mt-auto flex items-center justify-center gap-2 py-2.5 rounded-md bg-[#ED383C] text-white text-sm font-semibold hover:bg-[#d62d31] transition-all duration-300 shadow-sm hover:shadow-md">
+        Learn More
+        <span className="transition-transform group-hover:translate-x-1">→</span>
+      </button>
+
+    </div>
   );
 }
